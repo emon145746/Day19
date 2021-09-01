@@ -94,13 +94,13 @@ header{
     left: 0;
     transition: .5s;
 }
-.header_menu ul li:first-child a{
+.header_menu ul li .active{
     color:#c68223 ;
 }
 .header_menu ul li:hover::after{
     transform: scaleX(1);
 }
-.header_menu ul li:hover a{
+.header_menu ul li:hover>a{
     color: #c68223;
 }
 
@@ -114,14 +114,36 @@ header{
     position: absolute;
     top: 80%;
     left: 0;
+    width: 200px;
+    z-index: 5;
+    transform: scaleY(0);
+    transform-origin: center center;
+    transition: .5s;
+}
+.header_menu ul li:hover ul{
+    transform: scaleY(1);
 }
 .header_menu ul li ul li{
     display: block;
+    background-color: #fff;
+    padding: 20px 0 10px;
+    text-align: center;
+    transition: .5s;
 }
 .header_menu ul li ul li a{
     display: block;
+    color: #000;
+    transition: .5s;
 }
-
+.header_menu ul li ul li:hover{
+    background-color: #ddd;
+}
+.header_menu ul li ul li:hover a{
+    color: #c69453;
+}
+.header_menu ul li ul li:hover::after{
+    transform: scaleX(0);
+}
 
 
 /* ===========MAIN================== */
@@ -230,7 +252,7 @@ main a:hover{
     background-color: #fff;
 }
 .cards:hover img{
-    transform: rotateY(180deg);
+    transform: rotateY(360deg);
 }
 .cards a:hover{
     background-color: #000;
